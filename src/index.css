@@ -163,4 +163,83 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  
+  /* New colorful additions */
+  .bg-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.5s infinite;
+  }
+  
+  .card-glow {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  
+  .card-glow::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+      from 0deg at 50% 50%,
+      #3b82f6 0deg,
+      #8b5cf6 90deg,
+      #ec4899 180deg,
+      #f97316 270deg,
+      #3b82f6 360deg
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: rotate 4s linear infinite;
+  }
+  
+  .card-glow:hover::before {
+    opacity: 0.15;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  .float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
 }

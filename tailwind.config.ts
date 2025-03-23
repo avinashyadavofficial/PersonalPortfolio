@@ -168,7 +168,47 @@ export default {
 				'progress': {
 					'0%': { width: '0%' },
 					'100%': { width: '100%' }
-				}
+				},
+				// New colorful animations
+				'colorful-spin': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'colorful-ping': {
+					'75%, 100%': {
+						transform: 'scale(2)',
+						opacity: '0'
+					}
+				},
+				'gradient-x': {
+					'0%, 100%': {
+						'background-position': '0% 50%'
+					},
+					'50%': {
+						'background-position': '100% 50%'
+					}
+				},
+				'gradient-y': {
+					'0%, 100%': {
+						'background-position': '50% 0%'
+					},
+					'50%': {
+						'background-position': '50% 100%'
+					}
+				},
+				'background-shine': {
+					'0%': {
+						'background-position': '0% 50%'
+					},
+					'100%': {
+						'background-position': '-200% 50%'
+					}
+				},
+				'border-beam': {
+					'100%': {
+						'background-position': '-200% 0%'
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -183,7 +223,16 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'scale-in': 'scale-in 0.5s ease-out forwards',
 				'blur-in': 'blur-in 0.5s ease-out forwards',
-				'progress': 'progress 1.5s ease-out forwards'
+				'progress': 'progress 1.5s ease-out forwards',
+				// New colorful animations
+				'colorful-spin': 'colorful-spin 3s linear infinite',
+				'colorful-ping': 'colorful-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+				'gradient-x': 'gradient-x 10s ease infinite',
+				'gradient-y': 'gradient-y 10s ease infinite',
+				'background-shine': 'background-shine 2s linear infinite',
+				'border-beam': 'border-beam 2s linear infinite',
+				'bounce-slow': 'bounce 3s infinite',
+				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 			}
 		}
 	},

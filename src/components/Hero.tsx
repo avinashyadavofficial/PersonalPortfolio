@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Hero = () => {
@@ -35,15 +35,25 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-background/70"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/5 via-background/0 to-background/0"></div>
+        {/* Colorful gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/20 to-background"></div>
+        
+        {/* Dynamic colorful circles */}
+        <div className="absolute top-20 left-1/4 w-64 h-64 rounded-full bg-pink-500/10 animate-float blur-3xl"></div>
+        <div className="absolute bottom-20 right-1/4 w-80 h-80 rounded-full bg-purple-600/10 animate-float blur-3xl" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-40 h-40 rounded-full bg-blue-500/10 animate-float blur-3xl" style={{animationDelay: '2s'}}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center py-24 text-center">
         <div ref={titleRef} className="reveal-effect">
           <h1 className="font-display font-bold text-4xl md:text-6xl lg:text-7xl tracking-tight text-balance">
-            <span className="block">Avinash Yadav</span>
-            <span className="block mt-2 md:mt-4 text-gradient">Software Engineer</span>
+            <span className="block relative">
+              Avinash Yadav
+              <Sparkles className="absolute -top-10 -right-10 text-yellow-400 animate-pulse h-8 w-8" />
+            </span>
+            <span className="block mt-2 md:mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+              Software Engineer
+            </span>
           </h1>
         </div>
 
@@ -56,19 +66,19 @@ const Hero = () => {
         <div ref={ctaRef} className="reveal-effect mt-8 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#projects"
-            className="inline-flex items-center justify-center h-11 px-6 font-medium bg-primary text-primary-foreground rounded-md transition-all duration-300 ease-in-out transform hover:translate-y-[-2px] hover:shadow-lg"
+            className="inline-flex items-center justify-center h-11 px-6 font-medium bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white rounded-md transition-all duration-300 ease-in-out transform hover:translate-y-[-2px] hover:shadow-lg hover:shadow-blue-500/20"
           >
             View Projects
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center h-11 px-6 font-medium bg-secondary text-secondary-foreground rounded-md transition-all duration-300 ease-in-out transform hover:translate-y-[-2px]"
+            className="inline-flex items-center justify-center h-11 px-6 font-medium bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white rounded-md transition-all duration-300 ease-in-out transform hover:translate-y-[-2px] hover:shadow-lg hover:shadow-purple-500/20"
           >
             Contact Me
           </a>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-float">
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
           <a href="#experience" className="flex flex-col items-center justify-center text-sm text-foreground/70 hover:text-foreground transition-colors duration-300">
             <span className="mb-2">Scroll Down</span>
             <ArrowDown className="h-5 w-5" />
