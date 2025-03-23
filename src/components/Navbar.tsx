@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,6 +72,7 @@ const Navbar = () => {
           </div>
           
           <div className="hidden md:flex space-x-4 items-center">
+            <ThemeToggle />
             <a
               href="https://github.com/avinashyadav03"
               target="_blank"
@@ -99,7 +100,8 @@ const Navbar = () => {
             </a>
           </div>
           
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-4">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-foreground focus:outline-none"
