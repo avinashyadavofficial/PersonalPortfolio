@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 # Avinash Yadav - Portfolio Website
 
