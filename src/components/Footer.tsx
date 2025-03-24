@@ -17,7 +17,7 @@ const Footer = () => {
           
           <div className="flex space-x-6">
             <a
-              href="https://github.com/avinashyadav03"
+              href="https://github.com/avinashyadavofficial"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group"
