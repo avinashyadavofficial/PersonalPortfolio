@@ -75,7 +75,7 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-4 items-center">
             <ThemeToggle />
             <a
-              href="https://github.com/avinashyadav03"
+              href="https://github.com/avinashyadavofficial"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/80 hover:text-foreground transition-colors duration-300"
@@ -84,7 +84,7 @@ const Navbar = () => {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/avinashyadav03"
+              href="https://www.linkedin.com/in/avinashyadav03/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/80 hover:text-foreground transition-colors duration-300"
@@ -138,7 +138,7 @@ const Navbar = () => {
           ))}
           <div className="flex space-x-8 justify-center mt-6 pt-6 border-t border-border">
             <a
-              href="https://github.com/avinashyadav03"
+              href="https://github.com/avinashyadavofficial"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/80 hover:text-foreground transition-colors duration-300"
@@ -147,7 +147,7 @@ const Navbar = () => {
               <Github className="h-6 w-6" />
             </a>
             <a
-              href="https://linkedin.com/in/avinashyadav03"
+              href="https://www.linkedin.com/in/avinashyadav03/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/80 hover:text-foreground transition-colors duration-300"
