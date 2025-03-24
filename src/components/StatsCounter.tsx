@@ -17,7 +17,7 @@ const stats: StatItem[] = [
 const StatsCounter = () => {
   const [counters, setCounters] = useState<number[]>(stats.map(() => 0));
   const sectionRef = useRef<HTMLDivElement>(null);
-  const hasAnimated = useRef(false);
+  const isAnimating = useRef(false);
 
   const animateValue = (start: number, end: number, duration: number, index: number) => {
     let startTimestamp: number | null = null;
@@ -35,6 +35,10 @@ const StatsCounter = () => {
 
       if (progress < 1) {
         window.requestAnimationFrame(step);
+      } else {
+        if (index === stats.length - 1) {
+          isAnimating.current = false;
+        }
       }
     };
     
@@ -42,18 +46,26 @@ const StatsCounter = () => {
   };
 
   useEffect(() => {
+    const startAnimation = () => {
+      if (isAnimating.current) return;
+      isAnimating.current = true;
+      
+      // Reset all counters to 0
+      setCounters(stats.map(() => 0));
+      
+      stats.forEach((stat, index) => {
+        // Stagger the animations
+        setTimeout(() => {
+          animateValue(0, stat.value, 2000, index);
+        }, index * 200);
+      });
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated.current) {
-            hasAnimated.current = true;
-            
-            stats.forEach((stat, index) => {
-              // Stagger the animations
-              setTimeout(() => {
-                animateValue(0, stat.value, 2000, index);
-              }, index * 200);
-            });
+          if (entry.isIntersecting && !isAnimating.current) {
+            startAnimation();
           }
         });
       },
@@ -72,15 +84,15 @@ const StatsCounter = () => {
   }, []);
 
   return (
-    <section id="stats" ref={sectionRef} className="bg-black py-16 md:py-24">
+    <section id="stats" ref={sectionRef} className="bg-background py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center text-center">
-              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-500 mb-2">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-2">
                 {counters[index]}
               </span>
-              <span className="text-sm md:text-base text-white/80">
+              <span className="text-sm md:text-base text-foreground/80">
                 {stat.label}
               </span>
             </div>
