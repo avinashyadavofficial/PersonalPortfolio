@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Avinash Yadav - Portfolio Website
 
@@ -57,3 +58,6 @@ For production deployment, consider:
 
 ## License
 [MIT](LICENSE)
+=======
+# PersonalPortfolio
+>>>>>>> 03295c83a42a869eeafedcacf318ecd2e9be1efd
