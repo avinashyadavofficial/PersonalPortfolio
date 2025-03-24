@@ -96,12 +96,7 @@ const Contact = () => {
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Phone</p>
-                  <a href="tel:+91 9445723594" className="font-medium hover:text-primary transition-colors">
-                    +91 9445723594
-                  </a>
-                </div>
+               
               </div>
               
               <div className="flex items-center">
@@ -129,12 +124,12 @@ const Contact = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">GitHub</p>
                   <a 
-                    href="https://github.com/avinashyadav03" 
+                    href="https://github.com/avinashyadavofficial" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="font-medium hover:text-primary transition-colors flex items-center"
                   >
-                    github.com/avinashyadav03
+                    github.com/avinashyadavofficial
                     <ExternalLink className="h-3.5 w-3.5 ml-1" />
                   </a>
                 </div>
