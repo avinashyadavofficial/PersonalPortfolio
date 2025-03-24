@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -8,6 +9,7 @@ import Skills from '@/components/Skills';
 import Education from '@/components/Education';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import Resume from '@/components/Resume';
 
 const Index = () => {
   // Function to handle smooth scrolling for anchor links
@@ -64,6 +66,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <StatsCounter />
+      <Resume />
       <Experience />
       <Projects />
       <Skills />
